@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="score-container">
+      <div
+        class="interior-score-container"
+        style="display: flex; justify-content: space-between"
+      >
+        <div class="name-container">
+          <span id="ROCK"> ROCK </span>
+          <span id="PAPER"> PAPER </span>
+          <span id="SCISSORS"> SCISSORS </span>
+        </div>
+        <div class="score" style="display: flex">
+          <div
+            class="computer-score"
+            style="
+              margin: 0.75rem 1.45rem 0.75rem 0;
+              width: 6.95rem;
+              height: 6.4rem;
+              background-color: #ffffff;
+              border-radius: 0.45rem;
+              display: grid;
+              grid-template-columns: repeat(1, 1fr);
+              grid-template-rows: repeat(2, 1fr);
+            "
+          >
+            <div class="title">
+              <span id="COMPUTER" class="computer-title">COMPUTER</span
+              ><span id="COMPUTER">SCORE</span>
+            </div>
+            <div class="display-score">0</div>
+          </div>
+
+          <div
+            class="player-score"
+            style="
+              margin: 0.75rem 1rem 0.75rem 0;
+              width: 6.95rem;
+              height: 6.4rem;
+              background-color: #ffffff;
+              border-radius: 0.45rem;
+              display: grid;
+              grid-template-columns: repeat(1, 1fr);
+              grid-template-rows: repeat(2, 1fr);
+            "
+          >
+            <div class="title">
+              <span id="YOUR" class="your-title">YOUR</span
+              ><span id="YOUR">SCORE</span>
+            </div>
+            <div class="display-score">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-container" style="background-color: blue; flex: 1">
+      WHAT
+    </div>
+  </body>
+</html>
