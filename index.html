@@ -82,64 +82,12 @@
           <img src="./assets/paper.png" alt="" srcset="" />
         </div>
 
-        <div
-          class="rule-container"
-          style="
-            position: fixed;
-            inset: 13.5rem 0.65rem auto auto;
-            width: 15.15rem;
-            height: 18.35rem;
-            display: none;
-          "
-        >
-          <button
-            class="close-btn"
-            style="
-              float: right;
-              margin-top: 0.6rem;
-              margin-right: 0.4rem;
-              height: 50px;
-              width: 50px;
-              background-color: #ff0000;
-              border: 5px solid #ffffff;
-              border-radius: 50%;
-              font-family: Dangrek;
-              font-weight: 400;
-              color: #ffffff;
-              font-size: 2rem;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              cursor: pointer;
-            "
-            onclick="closeRules()"
-          >
-            X
-          </button>
-          <div
-            class="popup"
-            id="rulesPopup"
-            style="
-              margin-top: 2.1rem;
-              margin-right: 1.25rem;
-              background-color: #004429;
-              border: 0.35rem solid #ffffff;
-              border-radius: 0.65rem;
-            "
-          >
-            <h2
-              style="
-                text-align: center;
-                color: #ffffff;
-                font-size: 1.45rem;
-                height: 1.35rem;
-                line-height: 1.699rem;
-              "
-            >
-              Game Rules
-            </h2>
+        <div class="rule-container">
+          <button class="close-btn" onclick="closeRules()">X</button>
+          <div class="popup" id="rulesPopup">
+            <h2>Game Rules</h2>
             <ul>
-              <li style="">
+              <li>
                 Rock beats scissors, scissors beat paper, and paper beats rock.
               </li>
               <li>

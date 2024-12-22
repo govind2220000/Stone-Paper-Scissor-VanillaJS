@@ -221,8 +221,51 @@ li {
   font-size: 13px;
   text-wrap: stable;
   color: #ffffff;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
   padding-right: 0.09rem;
 }
 
-/* background: #FFD600; */
+.game-container .main-game .rule-container {
+  position: fixed;
+  inset: 13.5rem 0.65rem auto auto;
+  width: 15.15rem;
+  height: 18.35rem;
+  display: none;
+}
+
+.game-container .main-game .rule-container .close-btn {
+  float: right;
+  margin-top: 0.6rem;
+  margin-right: 0.4rem;
+  height: 50px;
+  width: 50px;
+  background-color: #ff0000;
+  border: 5px solid #ffffff;
+  border-radius: 50%;
+  font-family: Dangrek;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.game-container .main-game .rule-container .popup {
+  width: 13.9rem;
+  height: 16.25rem;
+  margin-top: 2.1rem;
+  margin-right: 1.25rem;
+  background-color: #004429;
+  border: 0.35rem solid #ffffff;
+  border-radius: 0.65rem;
+}
+
+.game-container .main-game .rule-container .popup h2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.45rem;
+  height: 1.35rem;
+  line-height: 1.699rem;
+}
