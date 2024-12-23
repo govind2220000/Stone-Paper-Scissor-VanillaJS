@@ -227,7 +227,9 @@ li {
 
 .game-container .main-game .rule-container {
   position: fixed;
-  inset: 13.5rem 0.65rem auto auto;
+  /* inset: 40% 2% auto auto; */
+  bottom: 12%;
+  right: 1%;
   width: 15.15rem;
   height: 18.35rem;
   display: none;
