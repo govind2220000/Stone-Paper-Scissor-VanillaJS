@@ -286,7 +286,7 @@ body .game-container .main-game .after-clicking {
   position: fixed;
   top: 50%;
   left: 25%;
-  display: flex;
+  display: none;
   position: relative;
 }
 
@@ -310,13 +310,14 @@ body .game-container .main-game .after-clicking .display-area {
 
 body .game-container .main-game .after-clicking .display-area h1 {
   height: 36px;
-  width: 183px;
+
   font-weight: 800;
   line-height: 45.7px;
   letter-spacing: 10%;
   color: #ffffff;
   text-align: center;
   margin: 2px 0;
+  text-wrap: nowrap;
 }
 
 body .game-container .main-game .after-clicking .display-area h2 {
@@ -349,6 +350,22 @@ body .game-container .main-game .after-clicking .display-area button:hover {
   cursor: pointer;
 }
 
+/* pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 body .game-container .main-game .after-clicking .computer {
   height: 140px;
   width: 140px;
@@ -358,6 +375,7 @@ body .game-container .main-game .after-clicking .computer {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* animation: pulse 2s infinite; */
 }
 
 body .game-container .main-game .after-clicking .player h3 {

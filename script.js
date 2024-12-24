@@ -1,4 +1,24 @@
 //let showRulesValue = false;
+const gameElements = ["rock", "paper", "scissors"];
+let computerInput = null;
+
+// Check if playerScore exists in localStorage
+if (!localStorage.getItem("playerScore")) {
+  // If not, set the initial value
+  localStorage.setItem("playerScore", 0);
+} else {
+  document.querySelector(".player-score .display-score").textContent =
+    localStorage.getItem("playerScore");
+}
+// Check if computerScore exists in localStorage
+if (!localStorage.getItem("computerScore")) {
+  // If not, set the initial value
+  localStorage.setItem("computerScore", 0);
+} else {
+  document.querySelector(".computer-score .display-score").textContent =
+    localStorage.getItem("computerScore");
+}
+
 function showRules() {
   console.log("Showing rules");
   //For more convenience we can use this commented logic
@@ -19,17 +39,19 @@ function closeRules() {
 }
 
 // Add event listener to the body element
-document.body.addEventListener("click", closeRules);
+//document.body.addEventListener("click", closeRules);
 
 //Function to handle player selection
-function handleClick(imageSrc) {
+function handleClick(imageSrcPlayer, imageSrcComputer) {
   //Update the image based on player selection
+  console.log("Handling click");
+
   document.querySelector(
     ".after-clicking .player img"
-  ).src = `./assets/${imageSrc}.png`;
+  ).src = `./assets/${imageSrcPlayer}.png`;
 
   //Scissors png has a different size hence we need to handle it separately
-  if (imageSrc === "scissors") {
+  if (imageSrcPlayer === "scissors") {
     document.querySelector(".after-clicking .player img").style.width =
       "2.675rem";
     document.querySelector(".after-clicking .player img").style.height = "3rem";
@@ -38,10 +60,10 @@ function handleClick(imageSrc) {
   //Update the image based on computer selection
   document.querySelector(
     ".after-clicking .computer img"
-  ).src = `./assets/${imageSrc}.png`;
+  ).src = `./assets/${imageSrcComputer}.png`;
 
   //Scissors png has a different size hence we need to handle it separately
-  if (imageSrc === "scissors") {
+  if (imageSrcComputer === "scissors") {
     document.querySelector(".after-clicking .computer img").style.width =
       "2.675rem";
     document.querySelector(".after-clicking .computer img").style.height =
@@ -59,4 +81,114 @@ function handleClick(imageSrc) {
 function playAgain() {
   document.querySelector(".after-clicking").style.display = "none";
   document.querySelector(".before-clicking").style.display = "flex";
+}
+
+function gameResult(playerInput) {
+  computerInput = gameElements[Math.floor(Math.random() * 3)];
+  console.log(
+    `Player Input: ${playerInput} and Computer Input: ${computerInput}`
+  );
+  switch (playerInput) {
+    case "rock":
+      if (computerInput === "rock") {
+        return -1; //tie
+      }
+      if (computerInput === "paper") {
+        return 0; //lose
+      }
+      return 1; //win
+
+    case "paper":
+      if (computerInput === "paper") {
+        return -1; //tie
+      }
+      if (computerInput === "scissors") {
+        return 0; //lose
+      }
+      return 1; //win
+
+    case "scissors":
+      if (computerInput === "scissors") {
+        return -1; //tie
+      }
+      if (computerInput === "rock") {
+        return 0; //lose
+      }
+      return 1; //win
+  }
+}
+
+function completeGame(playerInput) {
+  const result = gameResult(playerInput);
+  console.log(result);
+
+  if (result === 0) {
+    //If player loses then the player will get the border of yellow color and computer will get the border of purple color
+    document.querySelector(
+      ".game-container .main-game .after-clicking .computer"
+    ).style.border = "16px solid #bd00ff";
+
+    document.querySelector(
+      ".game-container .main-game .after-clicking .player"
+    ).style.border = "16px solid #FFA943";
+
+    //If the player has lost the game
+
+    document.querySelector(".display-area h1").textContent = "YOU LOST";
+    localStorage.setItem(
+      "computerScore",
+      Number(localStorage.getItem("computerScore")) + 1
+    );
+
+    //Update the score in DOM
+    document.querySelector(".computer-score .display-score").textContent =
+      localStorage.getItem("computerScore");
+  }
+
+  if (result === 1) {
+    //If player wins then the player will get the border of purple color and computer will get the border of yellow color
+    document.querySelector(
+      ".game-container .main-game .after-clicking .computer"
+    ).style.border = "16px solid #FFA943";
+
+    document.querySelector(
+      ".game-container .main-game .after-clicking .player"
+    ).style.border = "16px solid #bd00ff";
+
+    //If the player has won the game
+
+    document.querySelector(".display-area h1").textContent = "YOU WON";
+    localStorage.setItem(
+      "playerScore",
+      Number(localStorage.getItem("playerScore")) + 1
+    );
+
+    //Update the score in DOM
+    document.querySelector(".player-score .display-score").textContent =
+      localStorage.getItem("playerScore");
+
+    //Add the next button if the player has won the game(We have to complete this task)
+  }
+
+  if (result === -1) {
+    //If result is tie then both player and computer will get the same border of blue color
+    document.querySelector(
+      ".game-container .main-game .after-clicking .computer"
+    ).style.border = "16px solid #0074B6";
+
+    document.querySelector(
+      ".game-container .main-game .after-clicking .player"
+    ).style.border = "16px solid #0074B6";
+
+    //If the game is tie then this display area will be just an empty space
+    document.querySelector(".display-area h2").style.textContent = "";
+
+    //Display the tie message
+    document.querySelector(".display-area h1").textContent = "TIE UP";
+    document.querySelector(".display-area h1").style.cssText =
+      "font-weight: 800; line-height: 45.7px; letter-spacing: 10%; color: #ffffff; text-align: center; margin: 2px 0;";
+  }
+
+  //Update the image based on player selection
+  handleClick(playerInput, computerInput);
 }
