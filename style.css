@@ -117,14 +117,37 @@ body .game-container .main-game {
 }
 
 body .game-container .last-section {
-  position: absolute;
-  grid-column: 6/7;
+  background-color: inherit;
+  grid-column: 1/7;
   grid-row: 6/7;
-  align-self: center;
-  justify-self: center;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
 }
 
-body .game-container .last-section button {
+body .game-container .last-section .rules {
+  align-self: center;
+  justify-self: center;
+  grid-column: 6/7;
+}
+
+body .game-container .last-section .rules button {
+  width: 5.95rem;
+  height: 2rem;
+  border: 2px solid #ffffff;
+  border-radius: 0.5rem;
+  background-color: #8cc461;
+  cursor: pointer;
+}
+
+body .game-container .last-section .nextButton {
+  align-self: center;
+  justify-self: center;
+  grid-column: 6/7;
+  display: none;
+}
+
+body .game-container .last-section .nextButton button {
   width: 5.95rem;
   height: 2rem;
   border: 2px solid #ffffff;
@@ -299,6 +322,8 @@ body .game-container .main-game .after-clicking .player {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 1; /* Ensure it is on top of the .pulse-effect everytime*/
 }
 
 body .game-container .main-game .after-clicking .display-area {
@@ -350,22 +375,6 @@ body .game-container .main-game .after-clicking .display-area button:hover {
   cursor: pointer;
 }
 
-/* pulse Animation */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(2);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
 body .game-container .main-game .after-clicking .computer {
   height: 140px;
   width: 140px;
@@ -375,7 +384,8 @@ body .game-container .main-game .after-clicking .computer {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* animation: pulse 2s infinite; */
+  position: relative;
+  z-index: 1; /* Ensure it is on top of the .pulse-effect every time*/
 }
 
 body .game-container .main-game .after-clicking .player h3 {
@@ -400,4 +410,65 @@ body .game-container .main-game .after-clicking .computer h3 {
   line-height: 19.92px;
   letter-spacing: 10%;
   color: #ffffff;
+}
+
+/* Complete Pulse Animation */
+
+.pulse-effect {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* top: 50%;
+  left: 50%; */
+  width: 350px; /* Same size as .player */
+  height: 350px; /* Same size as .player */
+
+  border-radius: 50%;
+  /* transform: translate(-50%, -50%); */
+  /* animation: pulse 2s infinite; */
+  z-index: 0; /* Ensure it is behind the .player */
+}
+
+/* pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    background-color: #1fad039d;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 2;
+    background-color: rgba(39, 136, 1, 0.5);
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0.5;
+    background-color: rgba(51, 187, 6, 0.062);
+  }
+}
+
+.circle-1 {
+  width: 200px;
+  height: 200px;
+  background: rgba(163, 217, 119, 0.5);
+  animation: pulse 2s infinite;
+  animation-delay: 2s;
+}
+
+.circle-2 {
+  width: 180px;
+  height: 180px;
+  background: rgba(111, 191, 77, 0.5);
+  animation: pulse 2s infinite;
+  animation-delay: 0.5s;
+}
+
+.circle-3 {
+  width: 150px;
+  height: 150px;
+  background: rgba(74, 158, 46, 0.5);
+  /* animation: pulse 2s infinite; */
+  animation-delay: 0s;
 }

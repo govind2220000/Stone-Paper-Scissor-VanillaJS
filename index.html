@@ -67,7 +67,7 @@
       </div>
     </div>
 
-    <div class="game-container">
+    <div class="game-container" >
       <div class="main-game">
         <!-- Before clicking on any button -->
         <div class="before-clicking" style="display: block">
@@ -87,19 +87,30 @@
         </div>
         <!-- After clicking on any button -->
         <div class="after-clicking">
-          <div class="player">
-            <h3>YOU PICKED</h3>
-            <img src="./assets/paper.png" alt="" />
+          <div
+            class="player-container"
+            style="display: flex; align-items: center; justify-content: center"
+          >
+            <div class="player">
+              <h3>YOU PICKED</h3>
+              <img src="./assets/paper.png" alt="" />
+            </div>
           </div>
+
           <div class="display-area">
             <h1>YOU WIN</h1>
             <h2>AGAINST PC</h2>
 
             <button type="button" onclick="playAgain()">PLAY AGAIN</button>
           </div>
-          <div class="computer">
-            <h3>PC PICKED</h3>
-            <img src="./assets/rock.png" alt="" srcset="" />
+          <div
+            class="computer-container"
+            style="display: flex; align-items: center; justify-content: center"
+          >
+            <div class="computer">
+              <h3>PC PICKED</h3>
+              <img src="./assets/rock.png" alt="" srcset="" />
+            </div>
           </div>
         </div>
 
@@ -128,12 +139,23 @@
         </div>
       </div>
 
-      <div class="last-section">
-        <button type="button" onclick="showRules()">
-          <span>RULES</span>
-        </button>
+      <div class="last-section" >
+        <div class="rules">
+          <button type="button" onclick="showRules()">
+            <span>RULES</span>
+          </button>
+
+          
       </div>
+      <div class="nextButton">
+        <button type="button" onclick="playAgainWinner()">
+          <span>NEXT</span>
+        </button>
     </div>
+    </div>
+
+    
+
     <script src="./script.js"></script>
   </body>
 </html>
