@@ -2,21 +2,31 @@
 const gameElements = ["rock", "paper", "scissors"];
 let computerInput = null;
 
-// Check if playerScore exists in localStorage
-if (!localStorage.getItem("playerScore")) {
-  // If not, set the initial value
-  localStorage.setItem("playerScore", 0);
-} else {
-  document.querySelector(".player-score .display-score").textContent =
-    localStorage.getItem("playerScore");
+if (window.location.pathname.includes("index.html")) {
+  // Check if playerScore exists in localStorage
+  if (!localStorage.getItem("playerScore")) {
+    // If not, set the initial value
+    localStorage.setItem("playerScore", 0);
+  } else {
+    document.querySelector(".player-score .display-score").textContent =
+      localStorage.getItem("playerScore");
+  }
+  // Check if computerScore exists in localStorage
+  if (!localStorage.getItem("computerScore")) {
+    // If not, set the initial value
+    localStorage.setItem("computerScore", 0);
+  } else {
+    document.querySelector(".computer-score .display-score").textContent =
+      localStorage.getItem("computerScore");
+  }
 }
-// Check if computerScore exists in localStorage
-if (!localStorage.getItem("computerScore")) {
-  // If not, set the initial value
-  localStorage.setItem("computerScore", 0);
-} else {
-  document.querySelector(".computer-score .display-score").textContent =
-    localStorage.getItem("computerScore");
+
+function playAgainWinner() {
+  window.location.href = "winner.html";
+}
+
+function navigateToHome() {
+  window.location.href = "index.html";
 }
 
 function showRules() {
@@ -81,6 +91,15 @@ function handleClick(imageSrcPlayer, imageSrcComputer) {
 function playAgain() {
   document.querySelector(".after-clicking").style.display = "none";
   document.querySelector(".before-clicking").style.display = "flex";
+
+  //If Play Again is clicked then we need to remove the next button from the last section div and reset the posiion of Rules button
+
+  document.querySelector(".last-section .rules").style.gridColumn = "6/7";
+
+  //If Play Again is clicked then we need to center the button as it is like that in figma
+  document.querySelector(".last-section .rules").style.justifySelf = "center";
+
+  document.querySelector(".last-section .nextButton").style.display = "none";
 }
 
 function gameResult(playerInput) {
@@ -143,6 +162,19 @@ function completeGame(playerInput) {
     //Update the score in DOM
     document.querySelector(".computer-score .display-score").textContent =
       localStorage.getItem("computerScore");
+
+    //Display the pulse Effect behind the computer who has won the game and remove the pulse effect from the old winner if exists
+
+    if (document.querySelector(".pulse-effect")) {
+      document.querySelector(".pulse-effect").remove();
+    }
+
+    document
+      .querySelector(".computer-container")
+      .insertAdjacentHTML(
+        "afterbegin",
+        '<div class="pulse-effect"><div class="pulse-effect circle-3"></div><div class="pulse-effect circle-2"></div><div class="pulse-effect circle-1"></div></div>'
+      );
   }
 
   if (result === 1) {
@@ -155,19 +187,38 @@ function completeGame(playerInput) {
       ".game-container .main-game .after-clicking .player"
     ).style.border = "16px solid #bd00ff";
 
-    //If the player has won the game
+    //*****If the player has won the game******
 
+    //1. Display the winning message
     document.querySelector(".display-area h1").textContent = "YOU WON";
     localStorage.setItem(
       "playerScore",
       Number(localStorage.getItem("playerScore")) + 1
     );
 
-    //Update the score in DOM
+    //2. Update the score in DOM
     document.querySelector(".player-score .display-score").textContent =
       localStorage.getItem("playerScore");
 
-    //Add the next button if the player has won the game(We have to complete this task)
+    //3. Display the pulse Effect behind the player who has won the game and remove the pulse effect from old winner if exists
+
+    if (document.querySelector(".pulse-effect")) {
+      document.querySelector(".pulse-effect").remove();
+    }
+
+    document
+      .querySelector(".player-container")
+      .insertAdjacentHTML(
+        "afterbegin",
+        '<div class="pulse-effect"><div class="pulse-effect circle-3"></div><div class="pulse-effect circle-2"></div><div class="pulse-effect circle-1"></div></div>'
+      );
+    //4. Add the next button if the player has won the game(We have to complete this task)
+
+    document.querySelector(".last-section .rules").style.gridColumn = "5 / 6";
+    //If the player has won the game then we will be movind the rules div to the end of the grid cell as it is like that in figma
+    document.querySelector(".last-section .rules").style.justifySelf = "end";
+
+    document.querySelector(".last-section .nextButton").style.display = "block";
   }
 
   if (result === -1) {
@@ -187,6 +238,12 @@ function completeGame(playerInput) {
     document.querySelector(".display-area h1").textContent = "TIE UP";
     document.querySelector(".display-area h1").style.cssText =
       "font-weight: 800; line-height: 45.7px; letter-spacing: 10%; color: #ffffff; text-align: center; margin: 2px 0;";
+
+    //If the game is a tie then we have to remove pulse Effect from both players
+
+    if (document.querySelector(".pulse-effect")) {
+      document.querySelector(".pulse-effect").remove();
+    }
   }
 
   //Update the image based on player selection
