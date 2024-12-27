@@ -1,0 +1,222 @@
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #8cc461;
+  height: 100vh;
+  width: 100vw;
+}
+
+.parent .winner-container {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  height: 100vh;
+  width: 100vw;
+}
+
+.winner-container .champion-cup-container {
+  position: relative;
+  /* border: 2px solid #0baf0b; */
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.winner-container .champion-cup-container * {
+  position: absolute;
+}
+
+/* CSS for all stars */
+
+#star1 {
+  top: 52%;
+  left: 0%;
+}
+#star2 {
+  top: 30%;
+  right: 24%;
+}
+#star3 {
+  top: 25.5%;
+  left: 20%;
+}
+#star4 {
+  top: 38%;
+  left: 42%;
+}
+#star5 {
+  left: 19%;
+  bottom: 3%;
+}
+#star6 {
+  right: 12%;
+  bottom: 5%;
+}
+#star7 {
+  top: 50%;
+  right: 15%;
+}
+
+#star9 {
+  top: 37%;
+  left: 13%;
+}
+
+.champion-cup-container #cup {
+  position: absolute;
+}
+
+.winner-container .champion-message-container {
+  /* border: 2px solid #0baf0b; */
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.champion-message-container h1 {
+  font-size: 5.7rem;
+  font-weight: 800;
+  text-align: center;
+  color: #ffffff;
+  line-height: 6.66rem;
+  letter-spacing: 10px;
+  margin-bottom: 0px;
+}
+
+.champion-message-container h3 {
+  width: 457px;
+  height: 48px;
+  font-weight: 600;
+  font-size: 41px;
+  line-height: 48px;
+  margin: auto;
+  text-align: center;
+  color: #ffffff;
+  line-height: 3rem;
+  letter-spacing: 5px;
+  text-wrap: nowrap;
+  margin-bottom: 0px;
+}
+
+.champion-message-container .play-again-btn {
+  margin-top: 58px;
+  margin-bottom: 71px;
+}
+
+.champion-message-container .play-again-btn button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 174px;
+  height: 44px;
+  border-radius: 9px;
+  border: none;
+  background-color: #ffffff;
+  margin-top: 11px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 17.58px;
+  margin: 0 auto 0 auto;
+  color: #6b6b6b;
+}
+
+.rules-btn {
+  /* border: 2px solid #0baf0b; */
+  grid-column: 3/4;
+  grid-row: 2/3;
+  align-self: self-end;
+  justify-self: end;
+}
+
+.rules-btn button {
+  margin-bottom: 1.25rem;
+  margin-right: 1.25rem;
+  width: 119px;
+  height: 40px;
+  border: 2px solid #ffffff;
+  border-radius: 0.5rem;
+  background-color: #8cc461;
+  cursor: pointer;
+}
+
+.rules-btn button span {
+  width: 3.6rem;
+  height: 1rem;
+  margin: auto;
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.2305rem;
+  letter-spacing: 0.1rem;
+  color: #ffffff;
+}
+
+.rules-btn .rule-container {
+  position: fixed;
+  /* inset: 40% 2% auto auto; */
+  bottom: 12%;
+  right: 1%;
+  width: 15.15rem;
+  height: 18.35rem;
+  display: none;
+}
+.rule-container .close-btn {
+  float: right;
+  margin-top: 0.6rem;
+  margin-right: 0.4rem;
+  height: 50px;
+  width: 50px;
+  background-color: #ff0000;
+  border: 5px solid #ffffff;
+  border-radius: 50%;
+  font-family: Dangrek;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.rule-container .popup {
+  width: 13.9rem;
+  height: 16.25rem;
+  margin-top: 2.1rem;
+  margin-right: 1.25rem;
+  background-color: #004429;
+  border: 0.35rem solid #ffffff;
+  border-radius: 0.65rem;
+}
+
+.rule-container .popup h2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.45rem;
+  height: 1.35rem;
+  line-height: 1.699rem;
+}
+
+ul {
+  margin-right: 0.45rem;
+}
+
+ul li::marker {
+  color: #ffd600; /* Set the bullet color */
+  font-size: 1rem;
+}
+
+li {
+  list-style-type: square;
+
+  font-size: 13px;
+  text-wrap: stable;
+  color: #ffffff;
+  padding-bottom: 0.5rem;
+  padding-right: 0.09rem;
+}

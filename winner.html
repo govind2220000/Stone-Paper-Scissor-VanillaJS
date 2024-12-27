@@ -3,102 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arima:wght@100..700&family=Dangrek&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styleWinner.css" />
     <title>Winner</title>
   </head>
-  <body
-    style="
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      background-color: #8cc461;
-      height: 100vh;
-      width: 100vw;
-    "
-  >
+  <body>
     <div class="parent">
-      <div
-        class="winner-container"
-        style="
-          display: grid;
-          grid-template-rows: repeat(2, 1fr);
-          grid-template-columns: repeat(3, 1fr);
+      <div class="winner-container">
+        <div class="champion-cup-container">
+          <img src="./assets/Star 1.png" alt="" id="star1" />
+          <img src="./assets/Star 2.png" alt="" id="star2" />
+          <img src="./assets/Star 3.png" alt="" id="star3" />
+          <img src="./assets/Star 4.png" alt="" id="star4" />
+          <img src="./assets/Star 5.png" alt="" id="star5" />
+          <img src="./assets/Star 6.png" alt="" id="star6" />
+          <img src="./assets/Star 7.png" alt="" id="star7" />
+          <img src="./assets/Star 8.png" alt="" id="star8" />
+          <img src="./assets/Star 9.png" alt="" id="star9" />
+          <img src="./assets/Cup.png" alt="Cup image" srcset="" id="cup" />
+        </div>
+        <div class="champion-message-container">
+          <h1>HURRAY!!</h1>
+          <h3>YOU WON THE GAME</h3>
+          <div class="play-again-btn">
+            <button onclick="navigateToHome()">PLAY AGAIN</button>
+          </div>
+        </div>
 
-          background-color: rgb(38, 24, 90);
-          height: 100vh;
-          width: 100vw;
-        "
-      >
-        <div
-          class="class1"
-          style="
-            border: 2px solid #0baf0b;
-            grid-column: 2/3;
-            grid-row: 1/2;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-          "
-        >
-          <img src="./assets/Cup.png" alt="Cup image" srcset="" />
-        </div>
-        <div
-          class="class1"
-          style="border: 2px solid #0baf0b; grid-column: 2/3; grid-row: 2/3"
-        >
-          <h1
-            style="
-              font-size: 5.7rem;
-              font-weight: 800;
-              text-align: center;
-              color: #ffffff;
-              line-height: 6.66rem;
-              letter-spacing: 10px;
-              margin-bottom: 0px;
-            "
-          >
-            HURRAY!!
-          </h1>
-          <h3
-            style="
-              font-size: 2.57rem;
-              font-weight: 600;
-              text-align: center;
-              color: #ffffff;
-              line-height: 3rem;
-              letter-spacing: 5px;
-              text-wrap: nowrap;
-              margin-bottom: 0px;
-            "
-          >
-            YOU WON THE GAME
-          </h3>
-          <button>Play AGAIN</button>
-          <div
-            style="
-              height: 32px;
-              width: 32px;
-              background: rgba(217, 217, 217, 0.83);
-            "
-          ></div>
-        </div>
-        <div
-          class="class1"
-          style="border: 2px solid #0baf0b"
-          onclick="navigateToHome()"
-        >
-          Hello
-        </div>
-        <div
-          class="class1"
-          style="
-            border: 2px solid #0baf0b;
-            grid-column: 3/4;
-            grid-row: 2/3;
-            align-self: self-end;
-            justify-self: center;
-          "
-        >
-          <button type="button" style="margin-bottom: 25px">
+        <div class="rules-btn">
+          <div class="rule-container">
+            <button class="close-btn" onclick="closeRules()">X</button>
+            <div class="popup" id="rulesPopup">
+              <h2>Game Rules</h2>
+              <ul>
+                <li>
+                  Rock beats scissors, scissors beat paper, and paper beats
+                  rock.
+                </li>
+                <li>
+                  Agree ahead of time whether you'll count off "rock, paper,
+                  scissors, shoot" or just "rock, paper, scissors."
+                </li>
+                <li>
+                  Use rock, paper, scissors to settle minor decisions or simply
+                  play to pass the time.
+                </li>
+                <li>
+                  If both players lay down the same hand, each player lays down
+                  another hand.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <button type="button" onclick="showRules()">
             <span>RULES</span>
           </button>
         </div>
