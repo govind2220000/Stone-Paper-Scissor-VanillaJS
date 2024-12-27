@@ -1,4 +1,5 @@
 //let showRulesValue = false;
+const colorCode = { rock: "#0074b6", paper: "#ffa943", scissors: "#bd00ff" };
 const gameElements = ["rock", "paper", "scissors"];
 let computerInput = null;
 
@@ -104,6 +105,10 @@ function playAgain() {
 
 function gameResult(playerInput) {
   computerInput = gameElements[Math.floor(Math.random() * 3)];
+  document.querySelector(".after-clicking .player").style.borderColor =
+    colorCode[playerInput];
+  document.querySelector(".after-clicking .computer").style.borderColor =
+    colorCode[computerInput];
   console.log(
     `Player Input: ${playerInput} and Computer Input: ${computerInput}`
   );
@@ -142,14 +147,14 @@ function completeGame(playerInput) {
   console.log(result);
 
   if (result === 0) {
-    //If player loses then the player will get the border of yellow color and computer will get the border of purple color
-    document.querySelector(
-      ".game-container .main-game .after-clicking .computer"
-    ).style.border = "16px solid #bd00ff";
+    //If player loses then the player will get the border of yellow color and computer will get the border of purple color(not required)
+    // document.querySelector(
+    //   ".game-container .main-game .after-clicking .computer"
+    // ).style.border = "16px solid #bd00ff";
 
-    document.querySelector(
-      ".game-container .main-game .after-clicking .player"
-    ).style.border = "16px solid #FFA943";
+    // document.querySelector(
+    //   ".game-container .main-game .after-clicking .player"
+    // ).style.border = "16px solid #FFA943";
 
     //If the player has lost the game
 
@@ -184,13 +189,13 @@ function completeGame(playerInput) {
 
   if (result === 1) {
     //If player wins then the player will get the border of purple color and computer will get the border of yellow color
-    document.querySelector(
-      ".game-container .main-game .after-clicking .computer"
-    ).style.border = "16px solid #FFA943";
+    // document.querySelector(
+    //   ".game-container .main-game .after-clicking .computer"
+    // ).style.border = "16px solid #FFA943";
 
-    document.querySelector(
-      ".game-container .main-game .after-clicking .player"
-    ).style.border = "16px solid #bd00ff";
+    // document.querySelector(
+    //   ".game-container .main-game .after-clicking .player"
+    // ).style.border = "16px solid #bd00ff";
 
     //*****If the player has won the game******
 
@@ -232,14 +237,14 @@ function completeGame(playerInput) {
   }
 
   if (result === -1) {
-    //If result is tie then both player and computer will get the same border of blue color
-    document.querySelector(
-      ".game-container .main-game .after-clicking .computer"
-    ).style.border = "16px solid #0074B6";
+    //If result is tie then both player and computer will get the same border of blue color(this was not required)
+    // document.querySelector(
+    //   ".game-container .main-game .after-clicking .computer"
+    // ).style.border = "16px solid #0074B6";
 
-    document.querySelector(
-      ".game-container .main-game .after-clicking .player"
-    ).style.border = "16px solid #0074B6";
+    // document.querySelector(
+    //   ".game-container .main-game .after-clicking .player"
+    // ).style.border = "16px solid #0074B6";
 
     //If the game is tie then this display area will be just an empty space
     document.querySelector(".display-area h2").style.textContent = "";
