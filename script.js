@@ -153,6 +153,11 @@ function completeGame(playerInput) {
 
     //If the player has lost the game
 
+    //We have to change the button text to "PLAY AGAIN"
+
+    document.querySelector(".after-clicking .display-area button").textContent =
+      "PLAY AGAIN";
+
     document.querySelector(".display-area h1").textContent = "YOU LOST";
     localStorage.setItem(
       "computerScore",
@@ -214,8 +219,13 @@ function completeGame(playerInput) {
       );
     //4. Add the next button if the player has won the game(We have to complete this task)
 
+    //5.We have to change the button text to "PLAY AGAIN"
+
+    document.querySelector(".after-clicking .display-area button").textContent =
+      "PLAY AGAIN";
+
     document.querySelector(".last-section .rules").style.gridColumn = "5 / 6";
-    //If the player has won the game then we will be movind the rules div to the end of the grid cell as it is like that in figma
+    //If the player has won the game then we will be moving the rules div to the end of the grid cell as it is like that in figma
     document.querySelector(".last-section .rules").style.justifySelf = "end";
 
     document.querySelector(".last-section .nextButton").style.display = "block";
@@ -241,6 +251,9 @@ function completeGame(playerInput) {
 
     //If the game is a tie then we have to remove pulse Effect from both players
 
+    //We have to change the button text to "REPLAY"
+    document.querySelector(".after-clicking .display-area button").textContent =
+      "REPLAY";
     if (document.querySelector(".pulse-effect")) {
       document.querySelector(".pulse-effect").remove();
     }
