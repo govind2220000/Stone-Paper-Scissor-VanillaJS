@@ -116,6 +116,70 @@ body .game-container .main-game {
   grid-row: 1/6;
 }
 
+/* Small desktops and laptops (1024px and up) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  /* Your styles here */
+  .before-clicking {
+    position: absolute;
+    margin-left: -15%;
+  }
+} /* Medium desktops and laptops (1280px and up) */
+@media (min-width: 1280px) and (max-width: 1365px) {
+  /* Your styles here */
+  .before-clicking {
+    position: absolute;
+    margin: auto;
+  }
+} /* Large desktops and laptops (1366px and up) */
+@media (min-width: 1366px) and (max-width: 1439px) {
+  /* Your styles here */
+  .before-clicking {
+    position: absolute;
+    margin: auto;
+  }
+} /* Extra large desktops (1440px and up) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  /* Your styles here */
+  .before-clicking {
+    position: absolute;
+    margin-left: 5.5%;
+  }
+}
+
+/* Extra large desktops (1600px and up) */
+@media (min-width: 1600px) and (max-width: 1919px) {
+  /* Your styles here */
+  .before-clicking {
+    position: absolute;
+    margin-left: 10%;
+  }
+}
+
+/* Ultra large desktops (1920px and up) */
+@media (min-width: 1920px) {
+  /* Your styles here */
+  .before-clicking {
+    position: absolute;
+    margin-left: 16%;
+  }
+}
+
+/* Ultra large desktops (2560px and up) */
+@media (min-width: 2560px) and (max-width: 3839px) {
+  /* Your styles here */
+  .before-clicking {
+    position: absolute;
+    margin-left: 25%;
+  }
+} /* Ultra large desktops (3840px and up) */
+@media (min-width: 3840px) {
+  /* Your styles here */
+  .before-clicking {
+    position: absolute;
+    margin-left: 32%;
+  }
+}
+
 body .game-container .last-section {
   background-color: inherit;
   grid-column: 1/7;
