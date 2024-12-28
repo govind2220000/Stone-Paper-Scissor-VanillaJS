@@ -5,7 +5,7 @@ let computerInput = null;
 
 if (
   window.location.pathname.includes("index.html") ||
-  window.location.pathname === "/"
+  window.location.pathname.includes("/")
 ) {
   // Check if playerScore exists in localStorage
   if (!localStorage.getItem("playerScore")) {
