@@ -3,7 +3,10 @@ const colorCode = { rock: "#0074b6", paper: "#ffa943", scissors: "#bd00ff" };
 const gameElements = ["rock", "paper", "scissors"];
 let computerInput = null;
 
-if (window.location.pathname.includes("index.html")) {
+if (
+  window.location.pathname.includes("index.html") ||
+  window.location.pathname === "/"
+) {
   // Check if playerScore exists in localStorage
   if (!localStorage.getItem("playerScore")) {
     // If not, set the initial value
@@ -27,7 +30,7 @@ function playAgainWinner() {
 }
 
 function navigateToHome() {
-  window.location.href = "index.html";
+  window.location.href = "/";
 }
 
 function showRules() {
