@@ -30,7 +30,8 @@ function playAgainWinner() {
 }
 
 function navigateToHome() {
-  window.location.href = "/index.html";
+  window.location.href =
+    "https://govind2220000.github.io/Stone-Paper-Scissor-VanillaJS/index.html";
 }
 
 function showRules() {
