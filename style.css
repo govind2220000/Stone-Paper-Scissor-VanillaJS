@@ -514,16 +514,16 @@ body .game-container .main-game .after-clicking .computer h3 {
 }
 
 .circle-1 {
-  width: 200px;
-  height: 200px;
+  width: 230px;
+  height: 230px;
   background: rgba(163, 217, 119, 0.5);
   animation: pulse 2s infinite;
   animation-delay: 2s;
 }
 
 .circle-2 {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   background: rgba(111, 191, 77, 0.5);
   animation: pulse 2s infinite;
   animation-delay: 0.5s;
@@ -533,6 +533,6 @@ body .game-container .main-game .after-clicking .computer h3 {
   width: 150px;
   height: 150px;
   background: rgba(74, 158, 46, 0.5);
-  /* animation: pulse 2s infinite; */
-  animation-delay: 0s;
+  animation: pulse 2s infinite;
+  animation-delay: 0.2s;
 }
