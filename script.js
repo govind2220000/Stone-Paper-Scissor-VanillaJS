@@ -30,9 +30,8 @@ function playAgainWinner() {
 }
 
 function navigateToHome() {
-  window.location.href = "index.html";
+  window.location.href = "/";
 }
-
 
 function showRules() {
   console.log("Showing rules");
@@ -173,6 +172,8 @@ function completeGame(playerInput) {
       Number(localStorage.getItem("computerScore")) + 1
     );
 
+    document.querySelector(".display-area h2").textContent = "AGAINST PC";
+
     //Update the score in DOM
     document.querySelector(".computer-score .display-score").textContent =
       localStorage.getItem("computerScore");
@@ -209,6 +210,7 @@ function completeGame(playerInput) {
       "playerScore",
       Number(localStorage.getItem("playerScore")) + 1
     );
+    document.querySelector(".display-area h2").textContent = "AGAINST PC";
 
     //2. Update the score in DOM
     document.querySelector(".player-score .display-score").textContent =
@@ -251,7 +253,7 @@ function completeGame(playerInput) {
     // ).style.border = "16px solid #0074B6";
 
     //If the game is tie then this display area will be just an empty space
-    document.querySelector(".display-area h2").style.textContent = "";
+    document.querySelector(".display-area h2").textContent = "";
 
     //Display the tie message
     document.querySelector(".display-area h1").textContent = "TIE UP";
