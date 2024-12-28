@@ -30,7 +30,7 @@ function playAgainWinner() {
 }
 
 function navigateToHome() {
-  window.location.href = "/";
+  window.location.href = "index.html";
 }
 
 function showRules() {
